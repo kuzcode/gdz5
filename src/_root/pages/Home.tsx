@@ -2,6 +2,7 @@ import { Models } from "appwrite";
 
 import { Loader, PostCard } from "@/components/shared";
 import { useGetRecentPosts, useGetRecentSubjects } from "@/lib/react-query/queries";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const Home = () => {
   const {
@@ -35,6 +36,7 @@ const Home = () => {
           <h2 className="h3-bold md:h1-bold text-center w-full text-light-1">Звучит — ГДЗ с аудиозаписями.</h2>
           <h4 className="h3-regular md:h3-regular text-center w-full text-light-2">На нашем сайте вы можете ахуеть от количества ответов!</h4>
           <h4 className="h3-regular md:h3-regular text-center w-full text-light-2">Классы:</h4>
+          <SpeedInsights/>
           {isPostLoading && !posts ? (
 <Loader />
           ) : (
