@@ -61,32 +61,32 @@ const PostForm = ({ post, action }: PostFormProps) => {
           control={form.control}
           name="caption"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel className="shad-form_label">Caption</FormLabel>
-              <FormControl>
-                <Textarea
-                  className="shad-textarea custom-scrollbar"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage className="shad-form_message" />
-            </FormItem>
+<FormItem>
+  <FormLabel className="shad-form_label">Caption</FormLabel>
+  <FormControl>
+    <Textarea
+      className="shad-textarea custom-scrollbar"
+      {...field}
+    />
+  </FormControl>
+  <FormMessage className="shad-form_message" />
+</FormItem>
           )}
         />
 
         <div className="flex gap-4 items-center justify-end">
           <Button
-            type="button"
-            className="shad-button_dark_4"
-            onClick={() => navigate(-1)}>
-            Cancel
+type="button"
+className="shad-button_dark_4"
+onClick={() => navigate(-1)}>
+Cancel
           </Button>
           <Button
-            type="submit"
-            className="shad-button_primary whitespace-nowrap"
-            disabled={isLoadingCreate}>
-            {(isLoadingCreate) && <Loader />}
-            {action} Post
+type="submit"
+className="shad-button_primary whitespace-nowrap"
+disabled={isLoadingCreate}>
+{(isLoadingCreate) && <Loader />}
+{action} Post
           </Button>
         </div>
       </form>

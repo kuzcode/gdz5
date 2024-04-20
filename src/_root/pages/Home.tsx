@@ -13,7 +13,6 @@ const Home = () => {
   const {
     data: subjects,
     isLoading: isSubjectLoading,
-    isError: isErrorSubject,
   } = useGetRecentSubjects();
 
   if (isErrorPosts) {
@@ -37,28 +36,28 @@ const Home = () => {
           <h4 className="h3-regular md:h3-regular text-center w-full text-light-2">На нашем сайте вы можете ахуеть от количества ответов!</h4>
           <h4 className="h3-regular md:h3-regular text-center w-full text-light-2">Классы:</h4>
           {isPostLoading && !posts ? (
-            <Loader />
+<Loader />
           ) : (
-            <ul className="flex flex-row flex-1 w-full">
-              {posts?.documents.map((post: Models.Document) => (
-                <li key={post.$id} className="flex justify-center w-full">
-                  <PostCard post={post} />
-                </li>
-              ))}
-            </ul>
+<ul className="flex flex-row flex-1 w-full">
+  {posts?.documents.map((post: Models.Document) => (
+    <li key={post.$id} className="flex justify-center w-full">
+      <PostCard post={post} />
+    </li>
+  ))}
+</ul>
           )}
 
           <h4 className="h3-regular md:h3-regular text-center w-full text-light-2">Предметы:</h4>
           {isSubjectLoading && !subjects ? (
-            <Loader />
+<Loader />
           ) : (
-            <ul className="flex flex-row flex-1 w-full">
-              {subjects?.documents.map((sbjt: Models.Document) => (
-                <li key={sbjt.$id} className="flex justify-center w-full">
-                  <PostCard post={sbjt} />
-                </li>
-              ))}
-            </ul>
+<ul className="flex flex-row flex-1 w-full">
+  {subjects?.documents.map((sbjt: Models.Document) => (
+    <li key={sbjt.$id} className="flex justify-center w-full">
+      <PostCard post={sbjt} />
+    </li>
+  ))}
+</ul>
           )}
         </div>
       </div>
