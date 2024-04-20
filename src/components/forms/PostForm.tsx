@@ -37,10 +37,8 @@ const PostForm = ({ post, action }: PostFormProps) => {
     },
   });
 
-  // Query
   const { mutateAsync: createPost, isLoading: isLoadingCreate } =
     useCreatePost();
-  // Handler
   const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
     const newPost = await createPost({
       ...value

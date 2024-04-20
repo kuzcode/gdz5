@@ -9,7 +9,7 @@ const PostCard = ({ post }: PostCardProps) => {
         <div className="flex-between form">
         <div className="flex items-center">
           <div className="flex flex-row">
-            <p className="base-medium lg:body-bold text-light-1">
+            <p className="base-medium lg:body-thin text-light-1">
               {post.caption}
             </p>
           </div>

@@ -2,15 +2,8 @@ import { ID, Query } from "appwrite";
 
 import { appwriteConfig, databases, storage } from "./config";
 import { IUpdatePost, INewPost, } from "@/types";
-
-// ============================================================
-// POSTS
-// ============================================================
-
-// ============================== CREATE POST
 export async function createPost(post: INewPost) {
   try {
-    // Create post
     const newPost = await databases.createDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
@@ -29,8 +22,6 @@ export async function createPost(post: INewPost) {
     console.log(error);
   }
 }
-
-// ============================== UPLOAD FILE
 export async function uploadFile(file: File) {
   try {
     const uploadedFile = await storage.createFile(
@@ -44,8 +35,6 @@ export async function uploadFile(file: File) {
     console.log(error);
   }
 }
-
-// ============================== GET FILE URL
 export function getFilePreview(fileId: string) {
   try {
     const fileUrl = storage.getFilePreview(
@@ -65,7 +54,6 @@ export function getFilePreview(fileId: string) {
   }
 }
 
-// ============================== DELETE FILE
 export async function deleteFile(fileId: string) {
   try {
     await storage.deleteFile(appwriteConfig.storageId, fileId);
@@ -75,8 +63,6 @@ export async function deleteFile(fileId: string) {
     console.log(error);
   }
 }
-
-// ============================== GET POSTS
 export async function searchPosts(searchTerm: string) {
   try {
     const posts = await databases.listDocuments(
@@ -115,7 +101,6 @@ export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
   }
 }
 
-// ============================== GET POST BY ID
 export async function getPostById(postId?: string) {
   if (!postId) throw Error;
 
@@ -134,11 +119,9 @@ export async function getPostById(postId?: string) {
   }
 }
 
-// ============================== UPDATE POST
 export async function updatePost(post: IUpdatePost) {
 
   try {
-    //  Update post
     const updatedPost = await databases.updateDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
@@ -147,8 +130,6 @@ export async function updatePost(post: IUpdatePost) {
         caption: post.caption,
       }
     );
-
-    // Failed to update
     if (!updatedPost) {
       throw Error;
     }
@@ -157,8 +138,6 @@ export async function updatePost(post: IUpdatePost) {
     console.log(error);
   }
 }
-
-// ============================== GET POPULAR POSTS (BY HIGHEST LIKE COUNT)
 export async function getRecentPosts() {
   try {
     const posts = await databases.listDocuments(
@@ -170,6 +149,22 @@ export async function getRecentPosts() {
     if (!posts) throw Error;
 
     return posts;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getRecentSubjects() {
+  try {
+    const subjects = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.subjectCollectionId,
+      [Query.orderDesc("$createdAt"), Query.limit(20)]
+    );
+
+    if (!subjects) throw Error;
+
+    return subjects;
   } catch (error) {
     console.log(error);
   }

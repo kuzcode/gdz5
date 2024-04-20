@@ -1,4 +1,4 @@
-import { Client, Account, Databases, Storage } from "appwrite";
+import { Client, Databases, Storage } from "appwrite";
 
 export const appwriteConfig = {
   url: import.meta.env.VITE_APPWRITE_URL,
@@ -6,6 +6,7 @@ export const appwriteConfig = {
   databaseId: import.meta.env.VITE_APPWRITE_DATABASE_ID,
   storageId: import.meta.env.VITE_APPWRITE_STORAGE_ID,
   postCollectionId: import.meta.env.VITE_APPWRITE_POST_COLLECTION_ID,
+  subjectCollectionId: import.meta.env.VITE_APPWRITE_SUBJECTS_COLLECTION_ID,
 };
 
 export const client = new Client();
@@ -13,6 +14,5 @@ export const client = new Client();
 client.setEndpoint(appwriteConfig.url);
 client.setProject(appwriteConfig.projectId);
 
-export const account = new Account(client);
 export const databases = new Databases(client);
 export const storage = new Storage(client);
