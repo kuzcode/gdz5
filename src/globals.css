@@ -119,7 +119,7 @@ color:transparent;
 position: fixed;
 z-index: 0;
 }
-.bg.bubble-1 {
+.bg .bubble-1 {
 filter: blur(50px);
 width: 260px;
 height: 260px;

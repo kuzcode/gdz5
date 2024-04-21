@@ -26,7 +26,7 @@ return (
 <><div className="flex flex-1 w-full">
 <div className="home-container">
 <div className="home-posts">
-<h2 className="h3-bold md:h1-bold text-center w-full text-light-1"><span className="gradient-text">Звучит</span> — ГДЗ с аудиозаписями.</h2>
+<h2 className="h3-bold md:h1-bold text-center w-full text-light-1 mt-10"><span className="gradient-text">Звучит</span> — ГДЗ с аудиозаписями.</h2>
 <h4 className="h3-regular md:h3-regular text-center w-full text-light-2 marmin z-10">На нашем сайте вы можете ахуеть от количества ответов!</h4>
 <h4 className="h3-regular md:h3-regular text-center w-full text-light-1 z-10">Классы:</h4>
 {isPostLoading && !posts ? (
