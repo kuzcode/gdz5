@@ -1,5 +1,4 @@
 import * as z from "zod";
-import { Models } from "appwrite";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,11 +20,10 @@ import { useCreatePost } from "@/lib/react-query/queries";
 import { useState } from "react";
 
 type PostFormProps = {
-  post?: Models.Document;
   action: "Create" | "Update";
 };
 
-const PostForm = ({ post, action }: PostFormProps) => {
+const PostForm = ({ action }: PostFormProps) => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const form = useForm<z.infer<typeof PostValidation>>({
