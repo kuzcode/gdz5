@@ -10,7 +10,9 @@ function Home() {
                 <p>Кроссовки на любой вкус, <span className="nowrap">цвет и размер ноги</span></p>
 
                 <div className="btns">
-                    <button className="btn1" onClick={() => { }}>
+                    <button className="btn1" onClick={() => {
+                        navigate("https://t.me/El4lup");
+                    }}>
                         <p>Telegram</p>
                     </button>
                     <button className="btn2" onClick={() => {
