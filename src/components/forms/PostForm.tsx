@@ -30,10 +30,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
   const form = useForm<z.infer<typeof PostValidation>>({
     resolver: zodResolver(PostValidation),
     defaultValues: {
-      caption: post ? post?.caption : "",
-      file: [],
-      location: post ? post.location : "",
-      tags: post ? post.tags.join(",") : "",
+      caption: post ? post?.caption : ""
     },
   });
 
@@ -56,37 +53,33 @@ const PostForm = ({ post, action }: PostFormProps) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className="flex flex-col gap-9 w-full  max-w-5xl">
+        className="formm">
         <FormField
           control={form.control}
           name="caption"
           render={({ field }) => (
-<FormItem>
-  <FormLabel className="shad-form_label">Caption</FormLabel>
-  <FormControl>
-    <Textarea
-      className="shad-textarea custom-scrollbar"
-      {...field}
-    />
-  </FormControl>
-  <FormMessage className="shad-form_message" />
-</FormItem>
+            <FormItem
+          className="formm"
+          >
+              <FormLabel className="subtitle">Комментарий</FormLabel>
+              <FormControl>
+                <Textarea
+                  className="input"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage className="shad-form_message" />
+            </FormItem>
           )}
         />
 
         <div className="flex gap-4 items-center justify-end">
           <Button
-type="button"
-className="shad-button_dark_4"
-onClick={() => navigate(-1)}>
-Cancel
-          </Button>
-          <Button
-type="submit"
-className="shad-button_primary whitespace-nowrap"
-disabled={isLoadingCreate}>
-{(isLoadingCreate) && <Loader />}
-{action} Post
+            type="submit"
+            className="btn"
+            disabled={isLoadingCreate}>
+            {(isLoadingCreate) && <Loader />}
+            Оставить заявку
           </Button>
         </div>
       </form>
