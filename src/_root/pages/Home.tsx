@@ -16,7 +16,7 @@ function Home() {
                         <p>Telegram</p>
                     </button>
                     <button className="btn2" onClick={() => {
-                        navigate("/create-post");
+                        navigate("/order");
                     }}>
                         <p>Заказать</p>
                     </button>

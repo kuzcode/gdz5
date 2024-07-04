@@ -10,6 +10,8 @@ export async function createPost(post: INewPost) {
       ID.unique(),
       {
         caption: post.caption,
+        link: post.link,
+        contact: post.contact,
       }
     );
 

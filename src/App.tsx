@@ -16,7 +16,7 @@ const App = () => {
         {/* public routes */}
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/order" element={<CreatePost />} />
         </Route>
       </Routes>
 
