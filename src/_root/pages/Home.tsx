@@ -11,7 +11,7 @@ function Home() {
 
                 <div className="btns">
                     <button className="btn1" onClick={() => {
-                        navigate("https://t.me/El4lup");
+                        location.assign('https://t.me/El4lup')
                     }}>
                         <p>Telegram</p>
                     </button>
