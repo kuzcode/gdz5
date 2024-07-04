@@ -179,7 +179,7 @@ ul li h4 {
 
 .input {
   border: none;
-  background: #e8eaec;
+  background: #f0f2f3;
   border-radius: 24px;
   padding: 10px 12px;
   font-family: regular;
@@ -212,6 +212,14 @@ text-align: center;
   width: calc(100% - 48px);
   padding: 20px 36px 16px 36px;
 }
+}
+
+input,
+textarea,
+button,
+.row{
+    -webkit-tap-highlight-color: transparent;
+    outline-color: #07ede9;
 }
 
 .btn:hover {
