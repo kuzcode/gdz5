@@ -237,3 +237,25 @@ button,
   display: flex;
   flex-direction: column;
 }
+
+.p{
+  font-family: regular;
+  margin: 4px 24px;
+  font-size: calc(var(--index) * 0.65 + 4px);
+  color: #414747;
+}
+
+.third h2 {
+  margin: 0;
+  padding: 5vh 36px 0 36px;
+  text-align: center;
+  font-size: calc(var(--index) * 2 + 6px);
+  font-family: akony;
+}
+
+.third p {
+  margin: 0;
+  padding: 5vh 36px 0 36px;
+  font-size: calc(var(--index) * 0.5 + 12px);
+  font-family: regular;
+}

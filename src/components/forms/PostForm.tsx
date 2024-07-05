@@ -150,7 +150,6 @@ const PostForm = ({ action }: PostFormProps) => {
           )}
         />
 
-        <div className="flex gap-4 items-center justify-end">
           <Button
             type="submit"
             className="btn"
@@ -158,7 +157,8 @@ const PostForm = ({ action }: PostFormProps) => {
             {(isLoadingCreate) && <Loader />}
             Отправить
           </Button>
-        </div>
+
+        <p className="p">Нажимая "Отправить" я соглашаюсь на обработку персональных данных в соответсвии со статьёй 5 закона Республики Беларусь от 7 мая 2021 г. №99-3 "о защите персональных данных".</p>
       </form>
     </Form>
   );
