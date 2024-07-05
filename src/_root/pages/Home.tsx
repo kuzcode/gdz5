@@ -61,6 +61,25 @@ function Home() {
             </p>
             </div>
 
+
+            <div className="fourth">
+            <h2>комплект</h2>
+
+            <div className="scroll">
+                <li>
+                    <h4>Сертификат подлинности</h4>
+                </li>
+                <li>
+                    <h4>Коробка POIZON</h4>
+                </li>
+                <li>
+                    <h4>Сертификат POIZON</h4>
+                </li>
+                <li>
+                    <h4>Пломбы POIZON</h4>
+                </li>
+            </div>
+            </div>
         </>
     );
 }
